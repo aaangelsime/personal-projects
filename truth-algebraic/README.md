@@ -1,48 +1,23 @@
-Truth Table Generator from Algebraic Expressions (C++)
-📖 Project Overview
+Truth-Table Helper for Digital Logic (C++)
 
-This project is a C++ program that converts and completes a truth table from a given Boolean algebraic expression. The program takes in a logical expression as input and automatically generates the corresponding truth table, helping users visualize how the output depends on different combinations of inputs.
+A tiny C++ program that evaluates the Boolean expression
 
-The idea for this project originated from my Digital Logic course, where I was inspired by the challenge of manually constructing truth tables. This program simplifies that process by handling the conversions programmatically, making it a helpful tool for both learning and practice.
+𝑓(𝑤,𝑥,𝑦,𝑧)  = (𝑤 ∧ 𝑥)′∧ (𝑦′∨ 𝑧′)′  =  NAND(𝑤, 𝑥) ∧ (𝑦 ∧ 𝑧)
 
-✨ Features
+This started as a homework helper for truth tables in a Digital Logic course. It reads four binary inputs (w x y z) and prints the resulting value of f.
 
-Input a Boolean algebraic expression.
+What the code does
 
-Parse and evaluate the expression step by step.
+Inputs: four bits w x y z entered as characters '0' or '1'.
 
-Generate a complete truth table for all possible input combinations.
+Intermediate results:
 
-Useful for students, educators, or anyone learning digital logic.
+wAndx(w,x,wx) computes NAND: (𝑤 ∧ 𝑥)′  -> returns '0'/'1' in wx.
 
-🛠️ Technologies Used
+yAndz(y,z,yz) computes (𝑦′ ∨ 𝑧′)′ -> y∧z. Returns '0'/'1' in yz.
+By De Morgan, this equals 𝑦 ∧ 𝑧
 
-Language: C++
+Output: vValue = '1' iff wx == '1' and yz == '1'.
+That is 𝑓 = NAND(𝑤,𝑥) ∧ (𝑦 ∧ 𝑧)
 
-Concepts Applied:
-
-Parsing and evaluating Boolean expressions
-
-Logic gates and truth table construction
-
-Control structures and functions in C++
-
-🎯 Purpose
-
-Reinforce my understanding of digital logic fundamentals.
-
-Apply C++ programming skills to solve a practical problem.
-
-Create a tool that can save time and reduce human error when working with Boolean algebra.
-
-🚀 Future Improvements
-
-Add support for more complex expressions (nested parentheses, XOR, NAND, NOR, etc.).
-
-Provide a step-by-step breakdown of the evaluation for learning purposes.
-
-Expand into a GUI-based application for easier interaction.
-
-🙌 Acknowledgments
-
-This project was inspired by the Digital Logic course I took, where building truth tables from algebraic expressions was a foundational skill.
+Note on types: The program uses char for bits ('0' and '1'). Be careful to compare against character literals ('0', '1') rather than integers (0, 1) to avoid printing null chars.

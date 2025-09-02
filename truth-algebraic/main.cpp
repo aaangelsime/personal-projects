@@ -2,7 +2,7 @@
 
 using namespace std; 
 
-//Function f = (w*x)'
+//Function f = (w*x)' * (y'+z')'
 void wAndx (char w, char x, char& wx);
 void yAndz (char y, char z, char& yz);
 
@@ -98,6 +98,4 @@ void yAndz (char y, char z, char& yz){
     else {
         yz = '1';
     }
-
 }
-

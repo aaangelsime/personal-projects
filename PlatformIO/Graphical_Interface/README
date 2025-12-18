@@ -1,111 +1,105 @@
-#generate_readme.py
+Arduino 16x2 LCD Menu Project
 
+A simple Arduino project demonstrating a scrollable menu system on a 16x2 I2C LCD using three buttons (Up, Down, Select).
 
-project_name = "Arduino 16x2 LCD Menu Project"
-description = "A simple Arduino project demonstrating a scrollable menu system on a 16x2 I2C LCD using three buttons (Up, Down, Select)."
-features = [
-    "Scrollable menu with Up, Down, and Select buttons",
-    "Highlighted current selection with a > cursor",
-    "Automatic scrolling for menus with more items than display rows",
-    "Displays selected menu item feedback on the LCD",
-    "Easy to extend with submenus or custom actions"
-]
-hardware_requirements = [
-    "Arduino Uno R4 (or compatible)",
-    "16x2 I2C LCD (address 0x27)",
-    "3 Push buttons",
-    "Jumper wires",
-    "Breadboard (optional)"
-]
-button_wiring = [
-    ("Up", "D3", "GND"),
-    ("Down", "D5", "GND"),
-    ("Select", "D6", "GND")
-]
-lcd_wiring = [
-    ("SDA", "SDA"),
-    ("SCL", "SCL"),
-    ("VCC", "5V"),
-    ("GND", "GND")
-]
-software_requirements = [
-    "Arduino IDE or PlatformIO",
-    "LiquidCrystal_I2C library",
-    "Wire library (built-in)"
-]
-example_menu = [
-    "> Start\n  Settings",
-    "  Start\n> Settings"
-]
-license_text = "This project is open-source and free to use. You may modify and share it under the MIT License."
+Table of Contents
 
-# Generate README.md
-with open("README.md", "w") as f:
-    f.write(f"# {project_name}\n\n")
-    f.write(f"{description}\n\n")
-    f.write("## Table of Contents\n")
-    f.write("- [Overview](#overview)\n")
-    f.write("- [Features](#features)\n")
-    f.write("- [Hardware Requirements](#hardware-requirements)\n")
-    f.write("- [Wiring](#wiring)\n")
-    f.write("- [Software Requirements](#software-requirements)\n")
-    f.write("- [Code Structure](#code-structure)\n")
-    f.write("- [How It Works](#how-it-works)\n")
-    f.write("- [Example Menu](#example-menu)\n")
-    f.write("- [Customization](#customization)\n")
-    f.write("- [Usage Tips](#usage-tips)\n")
-    f.write("- [License](#license)\n\n")
+Overview
 
-    # Overview
-    f.write("## Overview\n\n")
-    f.write(f"{description}\n\n")
+Features
 
-    # Features
-    f.write("## Features\n\n")
-    for feature in features:
-        f.write(f"- {feature}\n")
-    f.write("\n")
+Hardware Requirements
 
-    # Hardware Requirements
-    f.write("## Hardware Requirements\n\n")
-    for item in hardware_requirements:
-        f.write(f"- {item}\n")
-    f.write("\n")
+Wiring
 
-    # Wiring
-    f.write("## Wiring\n\n")
-    f.write("### Buttons\n\n")
-    f.write("| Button | Arduino Pin | Connection |\n")
-    f.write("|--------|------------|-----------|\n")
-    for btn, pin, conn in button_wiring:
-        f.write(f"| {btn} | {pin} | {conn} |\n")
-    f.write("\n> **Note:** Buttons are used with `INPUT_PULLUP`. Pressing a button connects the pin to GND.\n\n")
+Software Requirements
 
-    f.write("### LCD I2C\n\n")
-    f.write("| LCD Pin | Arduino Pin |\n")
-    f.write("|---------|------------|\n")
-    for pin, conn in lcd_wiring:
-        f.write(f"| {pin} | {conn} |\n")
-    f.write("\n")
+Code Structure
 
-    # Software Requirements
-    f.write("## Software Requirements\n\n")
-    for s in software_requirements:
-        f.write(f"- {s}\n")
-    f.write("\n")
+How It Works
 
-    # Code Structure
-    f.write("## Code Structure\n\n")
-    f.write("- `setup()`: Initializes the LCD and button pins\n")
-    f.write("- `loop()`: Handles button input, redraws the menu, and checks for selection\n")
-    f.write("- `draw_menu()`: Displays the current two-item menu window on the LCD\n")
-    f.write("- `handle_input()`: Reads buttons and updates the current selection\n")
-    f.write("- `select_item()`: Displays the selected menu item on the LCD\n\n")
+Example Menu
 
-    # How It Works
-    f.write("## How It Works\n\n")
-    f.write("1. The LCD displays a menu of items.\n")
-    f.write("2. Up and Down buttons move the cursor through the menu.\n")
-    f.write("3. The menu scrolls automatically if the selected item moves beyond the visible rows.\n")
-    f.write("4. Pressing Select displays the selected menu item for 1 second.\n")
-    f.write("5. The menu then returns to normal operation.\n\n")
+Customization
+
+Usage Tips
+
+License
+
+Overview
+
+This project allows the user to navigate a menu of options on a 16x2 I2C LCD.
+Users can scroll through menu items using Up and Down buttons and select an item with the Select button.
+
+The currently selected menu item is highlighted with a cursor (>), and the menu scrolls automatically if there are more items than can fit on the display.
+
+Features
+
+Scrollable menu with up, down, and select buttons
+
+Highlighted current selection with a > cursor
+
+Automatic scrolling for menus with more items than display rows
+
+Displays selected menu item feedback on the LCD
+
+Easy to extend with submenus or custom actions
+
+Hardware Requirements
+
+Arduino Uno R4 (or compatible)
+
+16x2 I2C LCD (address 0x27)
+
+3 Push buttons
+
+Jumper wires
+
+Breadboard (optional)
+
+Wiring
+Buttons
+Button	Arduino Pin	Connection
+Up	D3	GND
+Down	D5	GND
+Select	D6	GND
+
+Note: Buttons are used with INPUT_PULLUP. Pressing a button connects the pin to GND.
+
+LCD I2C
+LCD Pin	Arduino Pin
+SDA	SDA
+SCL	SCL
+VCC	5V
+GND	GND
+Software Requirements
+
+Arduino IDE or PlatformIO
+
+LiquidCrystal_I2C library
+
+Wire library (built-in)
+
+Code Structure
+
+setup(): Initializes the LCD and button pins
+
+loop(): Handles button input, redraws the menu, and checks for selection
+
+draw_menu(): Displays the current two-item menu window on the LCD
+
+handle_input(): Reads buttons and updates the current selection
+
+select_item(): Displays the selected menu item on the LCD
+
+How It Works
+
+The LCD displays a menu of items.
+
+Up and Down buttons move the cursor through the menu.
+
+The menu scrolls automatically if the selected item moves beyond the visible rows.
+
+Pressing Select displays the selected menu item for 1 second.
+
+The menu then returns to normal operation.

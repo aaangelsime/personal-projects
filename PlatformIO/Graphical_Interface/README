@@ -1,105 +1,128 @@
-Arduino 16x2 LCD Menu Project
+# Arduino 16x2 LCD Menu Project
 
-A simple Arduino project demonstrating a scrollable menu system on a 16x2 I2C LCD using three buttons (Up, Down, Select).
+A simple Arduino project demonstrating a **scrollable menu system** on a 16x2 I2C LCD using three buttons (Up, Down, Select).
 
-Table of Contents
+---
 
-Overview
+## Table of Contents
 
-Features
+* [Overview](#overview)
+* [Features](#features)
+* [Hardware Requirements](#hardware-requirements)
+* [Wiring](#wiring)
+* [Software Requirements](#software-requirements)
+* [Code Structure](#code-structure)
+* [How It Works](#how-it-works)
+* [Example Menu](#example-menu)
+* [Customization](#customization)
+* [Usage Tips](#usage-tips)
+* [License](#license)
 
-Hardware Requirements
+---
 
-Wiring
+## Overview
 
-Software Requirements
+This project allows the user to navigate a **menu of options** on a 16x2 I2C LCD.
+Users can scroll through menu items using the **Up** and **Down** buttons and select an item with the **Select** button.
 
-Code Structure
+The currently selected menu item is highlighted with a cursor (`>`), and the menu scrolls automatically if there are more items than can fit on the display.
 
-How It Works
+---
 
-Example Menu
+## Features
 
-Customization
+* Scrollable menu with **Up**, **Down**, and **Select** buttons
+* Highlighted current selection with a `>` cursor
+* Automatic scrolling for menus with more items than display rows
+* Displays selected menu item feedback on the LCD
+* Easy to extend with submenus or custom actions
 
-Usage Tips
+---
 
-License
+## Hardware Requirements
 
-Overview
+* Arduino Uno R4 (or compatible)
+* 16x2 I2C LCD (address `0x27`)
+* 3 Push buttons
+* Jumper wires
+* Breadboard (optional)
 
-This project allows the user to navigate a menu of options on a 16x2 I2C LCD.
-Users can scroll through menu items using Up and Down buttons and select an item with the Select button.
+---
 
-The currently selected menu item is highlighted with a cursor (>), and the menu scrolls automatically if there are more items than can fit on the display.
+## Wiring
 
-Features
+### Buttons
 
-Scrollable menu with up, down, and select buttons
+| Button | Arduino Pin | Connection |
+| ------ | ----------- | ---------- |
+| Up     | D3          | GND        |
+| Down   | D5          | GND        |
+| Select | D6          | GND        |
 
-Highlighted current selection with a > cursor
+> **Note:** Buttons are configured with `INPUT_PULLUP`. Pressing a button connects the pin to GND.
 
-Automatic scrolling for menus with more items than display rows
+### LCD I2C
 
-Displays selected menu item feedback on the LCD
+| LCD Pin | Arduino Pin |
+| ------- | ----------- |
+| SDA     | SDA         |
+| SCL     | SCL         |
+| VCC     | 5V          |
+| GND     | GND         |
 
-Easy to extend with submenus or custom actions
+---
 
-Hardware Requirements
+## Software Requirements
 
-Arduino Uno R4 (or compatible)
+* Arduino IDE or PlatformIO
+* `LiquidCrystal_I2C` library
+* `Wire` library (built-in)
 
-16x2 I2C LCD (address 0x27)
+---
 
-3 Push buttons
+## Code Structure
 
-Jumper wires
+* `setup()`: Initializes the LCD and button pins
+* `loop()`: Handles button input, redraws the menu, and checks for selection
+* `draw_menu()`: Displays the current two-item menu window on the LCD
+* `handle_input()`: Reads buttons and updates the current selection
+* `select_item()`: Displays the selected menu item on the LCD
 
-Breadboard (optional)
+---
 
-Wiring
-Buttons
-Button	Arduino Pin	Connection
-Up	D3	GND
-Down	D5	GND
-Select	D6	GND
+## How It Works
 
-Note: Buttons are used with INPUT_PULLUP. Pressing a button connects the pin to GND.
+1. The LCD displays a menu of items.
+2. **Up** and **Down** buttons move the cursor through the menu.
+3. The menu scrolls automatically if the selected item moves beyond the visible rows.
+4. Pressing **Select** displays the selected menu item for 1 second.
+5. The menu then returns to normal operation.
 
-LCD I2C
-LCD Pin	Arduino Pin
-SDA	SDA
-SCL	SCL
-VCC	5V
-GND	GND
-Software Requirements
+---
 
-Arduino IDE or PlatformIO
+## Example Menu
 
-LiquidCrystal_I2C library
+```
+> Start
+  Settings
+```
 
-Wire library (built-in)
+or
 
-Code Structure
+```
+  Start
+> Settings
+```
 
-setup(): Initializes the LCD and button pins
+---
 
-loop(): Handles button input, redraws the menu, and checks for selection
+## Customization
 
-draw_menu(): Displays the current two-item menu window on the LCD
+* Add more menu items by updating the `menu_items[]` array.
+* Adjust the `delay()` in `handle_input()` to change button navigation speed.
+* Implement actions in `select_item()` for each menu option.
+* Replace push buttons with a joystick or rotary encoder for navigation.
+* Add custom arrow characters for a polished UI.
 
-handle_input(): Reads buttons and updates the current selection
+---
 
-select_item(): Displays the selected menu item on the LCD
-
-How It Works
-
-The LCD displays a menu of items.
-
-Up and Down buttons move the cursor through the menu.
-
-The menu scrolls automatically if the selected item moves beyond the visible rows.
-
-Pressing Select displays the selected menu item for 1 second.
-
-The menu then returns to normal operation.

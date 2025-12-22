@@ -88,3 +88,7 @@ Question(s):
         - This function creates a cirtual network interface (TAP device) on linux and returns
           a file descriptor that allows the program to read and write raw Ethernet packets
           directly to the operating system, just as if it were a physical network card.
+
+    ethernet.c / ethernet.h :
+        - These files help translate a network. It helps the computer understand the very first part 
+          of a digital message (the Ethernet Frame) as it arrives from a cable.

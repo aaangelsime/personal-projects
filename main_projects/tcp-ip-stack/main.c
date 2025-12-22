@@ -11,6 +11,11 @@
 
 int main()
 {
+    tap_init(); // initializes TAP interface
+    ethernet_init(); // setup ethernet layer 
+
+    tcp_listen(1337); // listen for incoming tcp connections
+
     char dev[IFNAMSIZ] = "tap0"; // requested TAP interface name
     uint8_t buf[BUFLEN]; // raw frame buffer
 

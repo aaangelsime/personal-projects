@@ -39,6 +39,12 @@ Phase 0:
 Phase 1:
     - Create a clean layout
 
+Phase 3:
+    - TCP header structure
+    - Checksums calculation
+    - SYN, SYN-ACK, and ACK handling
+    - Basic port listening 
+
     tcpip/
 
         |-main.c
@@ -82,10 +88,13 @@ Question(s):
     - ARP = IP -> MAC lookup
     - IP = Global Delivery
     - TCP = Reliability
+        - TCP = connection oriented protocal 
+        - Transmission Control Protocol (TCP) is responsible for repairing connections 
+            packet delivery. Providing reliable comm. in most networking.
     - TAP device = fake ethernet card
 
     tap.c / tap.h :
-        - This function creates a cirtual network interface (TAP device) on linux and returns
+        - This function creates a virtual network interface (TAP device) on linux and returns
           a file descriptor that allows the program to read and write raw Ethernet packets
           directly to the operating system, just as if it were a physical network card.
 

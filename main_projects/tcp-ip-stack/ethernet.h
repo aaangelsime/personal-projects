@@ -1,3 +1,7 @@
+/*
+Defines a packed c struct to ensure the compiler doesnt add padding, maintaining 1:1
+ratio between struct members and the 14 byte ethernet header
+*/
 #pragma once
 #include <stdint.h>
 

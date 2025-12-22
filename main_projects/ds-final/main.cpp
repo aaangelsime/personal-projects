@@ -7,6 +7,7 @@
 #include <array>
 #include <string>
 #include <limits>
+#include <fstream>
 
 using namespace std;
 
@@ -23,9 +24,12 @@ Item _healthBuff ("Healing buff", "Heal", 60);
 Item _strengthBuff ("Strength buff", "Attack Buff", 30);
 
 //game logic functions
-void game_intro();
+bool game_intro();
 void game_loop(Player& player, Dungeon<int>& game_dungeon);
 void game_combat(Player& player, Enemy* enemy);
+
+//game ascii functions
+void print_text(const std::string& filename);
 
 int main(int argc, char *argv[])
 {
@@ -70,12 +74,11 @@ int main(int argc, char *argv[])
 }
 
 //Implementation for the games intro
-void game_intro()
+bool game_intro()
 {
-    bool game_choice = true;
     int user_choice;
 
-    while (game_choice)
+    while (true)
     {
         cout << "\n===============================\n";
         cout << "           Dungeon             \n";
@@ -88,14 +91,13 @@ void game_intro()
 
         if (user_choice == 2)
         {
-            game_choice = false;
             cout << "You weren't ready anyways...\n";
-            
+            return false;   
         }
         else if (user_choice == 1)
         {
-            game_choice = false;
             cout << "good luck bruh...\n";
+            return true;
         }
         else
         {
@@ -107,6 +109,13 @@ void game_intro()
 //Implementation for the game's loop
 void game_loop(Player& player, Dungeon<int>& game_dungeon)
 {
+    bool play_game = game_intro();
+
+    if(!play_game)
+    {
+        return;
+    }
+
     //starts at the head (first room) of dungeon
     Room<int>* currentRoom = game_dungeon.getHead();
     int loop_choice;
@@ -302,4 +311,9 @@ void game_combat(Player& player, Enemy* enemy)
             return;
         }
     }
+}
+
+void print_text(const std::string& filename)
+{
+    std::ifstream file("enter.txt");
 }

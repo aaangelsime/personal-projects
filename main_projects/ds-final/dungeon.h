@@ -39,7 +39,7 @@ class Dungeon
         //getters
         Room<T>* getHead();
         Room<T>* getTail();
-        Room<T>* getDescription();
+        std::string getDescription();
         
 };
 
@@ -278,7 +278,7 @@ Room<T>* Dungeon<T>::getTail()
     return _tail;
 }
 template<typename T>
-Room<T>* Dungeon<T>::getDescription()
+std::string Dungeon<T>::getDescription()
 {
     return _description;
 }

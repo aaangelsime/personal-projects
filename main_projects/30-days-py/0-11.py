@@ -148,3 +148,13 @@ print('Rectangle Area:', rect_area)
 # rectangle parameter
 rect_per = 2 * x + y
 print('Rectangle Parameter:', rect_per)
+
+# area of circle
+pi = 3.4
+r = float(input('Enter radius of circle: '))
+circle_area = pi * r * r
+print('Circle Area =', circle_area)
+
+# cicumference of circle
+circle_circ = 2 * pi * r
+print('Circle Circumference =', circle_circ)

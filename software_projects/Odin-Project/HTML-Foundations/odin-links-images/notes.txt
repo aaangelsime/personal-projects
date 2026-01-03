@@ -1,0 +1,6 @@
+IMAGES AND LINKS
+
+    Anchor Elements <a> = defined by wrapping the text or another html element we want to 
+    be a link with an <a> tag
+
+    - href is needed with 

@@ -1,8 +1,11 @@
 ### NOTE(s)
 """
+
+DEFINITION(S):
+
     Indentation - Is used to create blocks of code, like curly brackets in c
 
-    Lists - is an ordered collection which allows to store different data types,
+    Lists - is an ordered collection of data which allows to store different data types,
             similiar to an array
 
             Example
@@ -29,4 +32,38 @@
 
             Example
           - {2.14, 9.74, 1.89} order is not important in a set
+
 """
+
+"""
+BASIC FUNCTION(S):
+
+        type - checks the data type of certain data/variable
+                example: type(10)  -> output = class 'int'
+        
+"""
+
+# Exercise Level 3
+
+# Write an example for different python data types
+
+first_name = 'Angel'
+last_name = 'Simental'
+age = 24
+programming_languages_skills = ('JS', 'Python', 'C/C++', 'Verilog')
+major = 'Electrical & Computer Engineer'
+gpa = 3.17
+
+print('First Name:', first_name) 
+print(type(first_name))
+print('Last Name:', last_name)
+print(type(last_name))
+print('Age:', age)
+print(type(age))
+print('Programming Languages:', programming_languages_skills)
+print(type(programming_languages_skills))
+print('College Major:', major)
+print(type(major))
+print('GPA:', gpa)
+print(type(gpa))
+

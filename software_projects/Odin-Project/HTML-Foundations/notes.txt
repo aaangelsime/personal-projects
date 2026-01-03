@@ -1,0 +1,62 @@
+HTML = HyperText Markup Language
+     = The raw data that a webpage is built out of.
+     = Puts info on a webpage.
+
+Elements and Tags
+
+Elements
+    - Used to create all of the paragraphs, headings, lists, images,
+    and links that make up a typical webpage.
+    ~ "Containers" for content 
+
+    Example:
+
+    <p>some text context</p> = a full paragraph element 
+
+Tags
+    - Are the essential building blocks that define the struct and content
+    of a webpage
+    - <> opening Tags - tell the browser the start of an HTML element
+    - </> closing Tags - tell browser where an HTML element ends
+
+HTML BoilerPlate = basic structure in every HTML doc.
+
+    - Every html page starts w/ doctype declaration
+    
+    Doctype <!Doctype html> = tells browser what version of html it should use to render doc
+    
+    lang attribute = specifies the language of the text content in 
+    that element
+
+    head element <head> = is where we put important info about webpages
+
+    meta element <meta charset = "UTF-8"> = "encoding". is very important
+    because it ensures that the webpage will display special symbols and char
+    from different languages correctly in the browser. Always in Head
+
+    body element <body> = where all the content will be displayed to users.
+
+Working with text:
+    Types of elements for text
+        <p> for paragraphs
+        <h1-6> for headings
+        <strong> for bold text
+        <em> for italic text
+        <!-- comments --> short cut ctrl + /
+
+Unordered List Example:
+    <ul>
+        <li>item</li>
+    </ul>
+
+Ordered List Example:
+    <ol>
+        <li>item</li>
+    </ol>
+
+Other Note(s):
+
+    - Name HTML files index.html, by default browsers will try to find
+    an index.html file.
+
+

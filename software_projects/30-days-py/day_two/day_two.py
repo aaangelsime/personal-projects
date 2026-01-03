@@ -59,7 +59,44 @@ city_to_list = list(city)
 print('List:', city_to_list)
 """
 
-#EXERCISE
+#Day 2: 30 days of python programming 
+first_name = 'Angel'
+last_name = 'Simental'
+full_name = 'Angel Simental'
+country = "Unfortunately, the U.S.A"
+city = 'GJ'
+age = 25
+year = 2026
+is_married = True
+is_true = True
+is_light = True
+
+x, y, z, = 5, 4, 3
+
+print(type(first_name))
+print(type(last_name))
+print(type(full_name))
+print(type(country))
+print(type(city))
+print(type(age))
+print(type(year))
+print(type(is_married))
+print(type(is_true))
+print(type(is_light))
+
+print('Length of name:', len(full_name))
+
+print('Length of first name:', len(first_name), 'Length of last name:', len(last_name))
+
+num_one, num_two = 5, 4
+diff = num_one - num_two
+print('num_one - num_two =', diff)
+prod = num_one * num_two
+print('num_one * num_two =', prod)
+division = num_one / num_two
+print('num_one / num_two =', division)
+
+
 
 
 

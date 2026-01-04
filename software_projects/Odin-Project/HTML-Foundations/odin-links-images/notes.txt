@@ -1,6 +1,19 @@
 IMAGES AND LINKS
 
-    Anchor Elements <a> = defined by wrapping the text or another html element we want to 
-    be a link with an <a> tag
+    LINKS:
+        Anchor Elements <a> = defined by wrapping the text or another html element we want to 
+            be a link with an <a> tag
 
-    - href is needed with 
+        - href is needed with 
+
+        template for anchor an href -> <a href="link">context</a>
+    
+    IMAGES:
+        <img> element is used, but its a void element
+        src = tells the browser where the image file is located via link
+
+Absolute Links:
+    - links to pages on other websites on the internet
+
+Relative Links:
+    - links to other pages within our own website

@@ -59,6 +59,59 @@ CSS Note(s)
             background-color: red;
         }
 
+3) ADDING CSS TO HTML
+
+    EXTERNAL CSS: Involves creating a serparate file for the css and linking it inside the html with <link> elemnt in the <head> opening/closing tags
+
+    Example:
+
+    // Index.html
+
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    // style.css
+
+    div {
+        color: white;
+        background-color: black;
+    }
+
+    p {
+        color: red;
+    }
+
+
+    INTERNAL CSS: Involves adding the css within html file itself. By placing the rules inside of a pair of opening and clsoing <style> tags.
+
+    Example 
+
+    // Index.html
+
+    <head>
+        <style>
+            div {
+                color: white;
+                background-color: black;
+            }
+
+            p {
+                color: red;
+            }
+        </style>
+    </head>
+
+    INLINE CSS: Add styles to HTML elements
+
+    Example:
+
+    // Index.html
+    
+    <body>
+        <div style="color: white; background-color: black;">...</div>
+    </body>
+
 
 
 Other Note(s)

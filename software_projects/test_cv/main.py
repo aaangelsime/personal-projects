@@ -1,3 +1,4 @@
+#Skeleton CV
 import cv2
 import mediapipe as mp
 # Use the direct paths to avoid the AttributeError

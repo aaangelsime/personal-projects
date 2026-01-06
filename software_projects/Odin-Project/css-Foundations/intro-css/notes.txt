@@ -1,0 +1,66 @@
+CSS Note(s)
+
+1) BASIC SYNTAX
+
+    selector {
+        property: value;
+    }
+
+    Example:
+    div.bold-text {
+        font-weight: 700;
+    }
+
+        Selector and semicolon-serparated list of declarations
+    with each of those declarations being made up of property
+    value pair.
+
+2) SELECTORs
+
+    Selectors refer to the HTML elements to which css rules apply.
+
+    UNIVERSAL SELECTORS: selects elements of every type
+
+        Example:
+        *{
+            color: purple;
+        }
+    
+    TYPE SELECTORS: selects all elements of the given element type.
+
+        Example:
+        // Index.HTML
+        <div> Context </div>
+
+        // style.css
+        div {
+            color: white;
+        }
+
+    CLASS SELECTORS: select all elements with the given CLASS
+
+        Example:
+        // Index.HTML
+        <div class="alert-text">Please agree to our terms of service.</div>
+
+        // style.css
+        .alert-text {
+            color: red;
+        }
+
+    ID SELECTORS: select an element with the given ID
+
+        Example:
+        // Index.HTML
+        <div id="title">Context</div>
+
+        // style.css
+        #title {
+            background-color: red;
+        }
+
+
+
+Other Note(s)
+
+- <div> is an empty container element

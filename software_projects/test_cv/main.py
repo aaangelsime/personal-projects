@@ -1,6 +1,15 @@
 #Skeleton CV
+"""
+Reads video frames one by one
+Uses MediaPipe to detect:
+    body joints(pose)
+    hands & fingers
+Draws skeleton overlay
+Displays the video in real time
+"""
 import cv2
 import mediapipe as mp
+
 # Use the direct paths to avoid the AttributeError
 from mediapipe.python.solutions import drawing_utils as mp_drawing
 from mediapipe.python.solutions import pose as mp_pose

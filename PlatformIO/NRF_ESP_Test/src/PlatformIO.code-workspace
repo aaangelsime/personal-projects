@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "PlatformIO",
+			"path": "../../../../../Projects/personal-projects/PlatformIO"
+		},
+		{
+			"name": "NRF_ESP_Test",
+			"path": ".."
+		}
+	],
+	"settings": {}
+}

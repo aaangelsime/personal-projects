@@ -25,6 +25,10 @@ int main(void)
     printf("p = %p\n", (void*)p); // address of x
     printf("&p = %p\n", (void*)&p); // address of pointer variable
     
+    // Displays byte size of the three types of ints
+    printf("size of a short is %d\n", sizeof(short));
+    printf("size of a int is %d\n", sizeof(int));
+    printf("size of a long is %d\n", sizeof(long));
     return 0;
 
 }

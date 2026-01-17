@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../ultra_detection"
+		},
+		{
+			"name": "Ultra_Oled_Detection",
+			"path": ".."
+		},
+		{
+			"name": "x_y_joystick_led",
+			"path": "../../x_y_joystick_led"
+		}
+	],
+	"settings": {}
+}

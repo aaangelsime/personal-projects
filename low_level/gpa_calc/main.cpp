@@ -5,7 +5,6 @@
 int main (int argc, char* argv[])
 {
     int num_classes;
-    std::vector<char> semester_grades(num_classes);
     
     std::cout << "\n  ========================\n";
     std::cout << "  ==== GPA CALCULATOR ====\n";
@@ -14,8 +13,9 @@ int main (int argc, char* argv[])
     std::cout << "\nEnter the number of classes taken this semester: ";
     std::cin >> num_classes;
 
-    int n_classes = num_classes;
-    std::vector<float> s_grades(n_classes);
+
+    std::vector<char> semester_grades(num_classes);
+    std::vector<float> s_grades(num_classes);
     
     for (int i = 0; i < num_classes; ++i)
     {
@@ -30,7 +30,7 @@ int main (int argc, char* argv[])
         std::cout << "     Class " << i + 1 << " | Grade = " << semester_grades[i] << std::endl;
     }
 
-    for (int i = 0; i < n_classes; ++i)
+    for (int i = 0; i < num_classes; ++i)
     {
         if (semester_grades[i] == 'a')
         {
@@ -50,14 +50,14 @@ int main (int argc, char* argv[])
         }
     }
 
-    float semester_gpa;
+    float semester_gpa = 0.0;
 
-    for (int i = 0; i < n_classes; ++i)
+    for (int i = 0; i < num_classes; ++i)
     {
-        semester_gpa = semester_gpa + s_grades[i];
+        semester_gpa += s_grades[i];
     }
 
-    semester_gpa = semester_gpa / n_classes;
+    semester_gpa /= num_classes;
     
     std::cout << "\n     Semester GPA: " << semester_gpa << std::endl;
 
